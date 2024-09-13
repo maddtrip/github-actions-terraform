@@ -54,7 +54,7 @@ resource "aws_instance" "ansible-master-america" {
     Project = lower(var.project)
   }
   # User data script to install Ansible
-  user_data = "${file(var.usrdataAnsibleMaster)}"
+  user_data = base64encode("${file(var.usrdataAnsibleMaster)}")
 }
 
 # Creating 2nd EC2 instance in Public Subnet
@@ -78,7 +78,7 @@ resource "aws_instance" "ansible-node-america" {
   }
 
   # User data script to install Ansible
-  user_data = "${file(var.usrdataAnsibleNode)}"
+  user_data = base64encode("${file(var.usrdataAnsibleNode)}")
 }
 
 
