@@ -34,7 +34,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-east-1"
 
-      - name: Change to Terraform directory
+      - name: Terraform initialize
         run: terraform init
           
       - name: Terraform validation and linting
