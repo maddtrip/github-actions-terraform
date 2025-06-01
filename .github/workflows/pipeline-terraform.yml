@@ -35,7 +35,7 @@ jobs:
           aws-region: "us-east-1"
 
       - name: Install Terraform
-        run: sudo snap install terraform
+        run: sudo snap install terraform --classic
 
       - name: Terraform initialize
         run: terraform init
